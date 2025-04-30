@@ -5,7 +5,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@drawable/card_table_texture"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/shuffleButton"
@@ -20,9 +23,18 @@
         android:text="Draw Card"
         android:layout_marginTop="12dp" />
 
-    <ImageView
-        android:id="@+id/cardImage"
-        android:layout_width="150dp"
-        android:layout_height="220dp"
-        android:layout_marginTop="24dp" />
+    <FrameLayout
+        android:id="@+id/cardContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/cardBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="Image of the cards" />
+
+    </FrameLayout>
+
 </LinearLayout>
