@@ -12,18 +12,18 @@
 
     <Button
         android:id="@+id/shuffleButton"
-        android:layout_width="wrap_content"
+        android:layout_width="377dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#ADD8E6"
-        android:text="Shuffle Deck" />
+        android:text="@string/shuffle_deck" />
 
     <Button
         android:id="@+id/drawButton"
-        android:layout_width="wrap_content"
+        android:layout_width="377dp"
         android:layout_height="wrap_content"
-        android:text="Draw Card"
+        android:layout_marginTop="12dp"
         android:backgroundTint="#ADD8E6"
-        android:layout_marginTop="12dp" />
+        android:text="@string/draw_card" />
 
     <FrameLayout
         android:id="@+id/cardContainer"
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:contentDescription="Image of the cards" />
+            android:contentDescription="@string/image_of_the_cards" />
 
     </FrameLayout>
 

@@ -2,7 +2,6 @@ package com.ebs233.finalproject.network
 
 import com.ebs233.finalproject.model.ShuffleResponse
 import com.ebs233.finalproject.model.DrawResponse
-import com.ebs233.finalproject.model.Card
 
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -13,6 +12,6 @@ interface DeckApi {
     @GET("api/deck/new/shuffle/")
     fun shuffleDeck(@Query("deck_count") deckCount: Int = 1): Call<ShuffleResponse>
 
-    @GET("api/deck/{deck_id}/draw/")
-    fun drawCard(@Path("deck_id") deckId: String, @Query("count") count: Int = 1): Call<DrawResponse>
+    @GET("api/deck/{deckId}/draw/")
+    fun drawCard(@Path("deckId") deckId: String, @Query("count") count: Int = 1): Call<DrawResponse>
 }

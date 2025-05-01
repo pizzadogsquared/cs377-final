@@ -2,7 +2,6 @@ package com.ebs233.finalproject
 
 import com.ebs233.finalproject.model.ShuffleResponse
 import com.ebs233.finalproject.model.DrawResponse
-import com.ebs233.finalproject.model.Card
 import com.ebs233.finalproject.network.DeckApi
 
 import android.os.Bundle
@@ -21,10 +20,7 @@ import kotlin.random.Random
 class MainActivity : AppCompatActivity() {
     private lateinit var shuffleButton: Button
     private lateinit var drawButton: Button
-    //private lateinit var cardImage: ImageView
     private lateinit var cardContainer: FrameLayout
-
-    var cardCounter = 0
 
     // Retrofit API service
     private lateinit var deckApi: DeckApi
@@ -35,9 +31,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // initialize buttons and containers for card images
         shuffleButton = findViewById(R.id.shuffleButton)
         drawButton = findViewById(R.id.drawButton)
-        //cardImage  = findViewById(R.id.cardImage)
         cardContainer  = findViewById(R.id.cardContainer)
 
 
@@ -48,11 +44,13 @@ class MainActivity : AppCompatActivity() {
             .build()
 
         deckApi = retrofit.create(DeckApi::class.java)
+        // set listeners for the buttons
         shuffleButton.setOnClickListener { shuffleDeck() }
         drawButton.setOnClickListener { drawCard() }
     }
 
     private fun shuffleDeck() {
+        // call the api to shuffle the deck of cards
         deckApi.shuffleDeck(1).enqueue(object : Callback<ShuffleResponse> {
             override fun onResponse(call: Call<ShuffleResponse>, response: Response<ShuffleResponse>) {
                 if (response.isSuccessful) {
