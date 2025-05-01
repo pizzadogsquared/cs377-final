@@ -81,9 +81,9 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<DrawResponse>, response: Response<DrawResponse>) {
                 // create new image view for each draw
                 val imageView = ImageView(this@MainActivity)
-                imageView.layoutParams= LinearLayout.LayoutParams(400, 400)
+                imageView.layoutParams= LinearLayout.LayoutParams(500, 1000)
                 imageView.rotation = Random.nextFloat() * 100 + -50
-                imageView.x = Random.nextFloat() * 200 + 200 // slight random X
+                imageView.x = Random.nextFloat() * 200 + 150 // slight random X
                 imageView.y = Random.nextFloat() * 200 + 200  // slight random Y
 
                 if (response.isSuccessful) {
